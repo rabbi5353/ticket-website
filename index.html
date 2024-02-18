@@ -87,17 +87,12 @@
                     Paribahan</span>
             </h1>
 
-            <p class="w-[691px] text-white inter-font text-lg mx-auto">Yes, you can run unit tests and view the results
-                directly
-                within
-                the app. The
-                integrated testing features
-                allow for a streamlined .</p>
+            <p class="w-[691px] text-white inter-font text-lg mx-auto">Effortless travel starts here! Book your bus
+                tickets online. Explore routes, save time, and enjoy the journey.</p>
 
             <div class="pt-10 pb-[166px]">
-                <a
-                    class="px-4 lg:px-[30px] py-2 lg:py-5 rounded-xl cursor-pointer bg-[#1DD100] text-[#030712] font-bold text-xl">Buy
-                    Tickets</a>
+                <a class="px-4 lg:px-[30px] py-2 lg:py-5 rounded-xl cursor-pointer bg-[#1DD100] text-[#030712] font-bold text-xl"
+                    href="#main-ticket-section">Buy Tickets</a>
             </div>
 
         </div>
@@ -147,14 +142,14 @@
 
 
         <!-- ---------------*** Main Tickets Section ***--------------- -->
-        <section class="mt-[140px] border-t-2 border-[#1dd100] bg-[#f7f8f8] rounded-t-[88px]">
+        <section id="main-ticket-section"
+            class="mt-[140px] pb-[120px] border-t-2 border-[#1dd100] bg-[#f7f8f8] rounded-t-[88px]">
             <div class="text-center">
                 <h3 class="text-2xl lg:text-[40px] font-bold text-[#030712] text-center mt-[120px] mb-6">P.H Paribahan
                 </h3>
 
-                <p class="w-[691px] text-[#03071299] inter-font text-lg mx-auto mb-12">Yes, you can run unit tests and
-                    view
-                    the results directly within the app. The integrated testing features allow for a streamlined .</p>
+                <p class="w-[691px] text-[#03071299] inter-font text-lg mx-auto mb-12">Simple booking, quick travel!
+                    Secure your bus tickets effortlessly. Explore routes, choose seats, and enjoy the ride.</p>
             </div>
 
             <!-- Greenline Paribahan Area -->
@@ -235,7 +230,7 @@
 
             <!-- ---------------*** Seats Area Section ***--------------- -->
             <div class="container max-w-[1170px] mx-auto mt-[26px]">
-                <div class="flex bg-white items-center rounded-3xl p-8">
+                <div class="flex bg-white items-start rounded-3xl p-8">
 
                     <!-- ----- Left Side ----- -->
                     <div class="w-[609px]">
@@ -307,7 +302,7 @@
                     </div>
 
 
-                    <hr class="border-l-2 border-[#0307124c] border-dashed h-[500px] ml-7">
+                    <hr class="border-l-2 border-[#0307124c] border-dashed h-[992px] ml-8 mr-8">
 
 
 
@@ -315,9 +310,100 @@
                     <div class="w-[433px]">
                         <h4 class="text-[#030712] text-2xl font-semibold">Select Your Seat</h4>
 
-                        <hr class="border-dashed border-[#03071233] mt-[23px] mb-[16px]">
+                        <hr class="border-dashed border-[#03071233] mt-[23px] mb-[24px]">
+
+                        <!-- ----- Grand Total Part ----- -->
+                        <div class="bg-[#f7f8f8] rounded-xl p-8 inter-font">
+                            <div class="flex justify-between">
+                                <div class="flex gap-[3px] items-center">
+                                    <h5 class="text-[#030712] text-base font-medium">Seat</h5>
+                                    <p
+                                        class="w-[23px] h-[13px] bg-[#1DD100] rounded-[5px] text-white text-xs font-bold flex justify-center items-center">
+                                        2</p>
+                                </div>
+                                <h5 class="text-[#030712] text-base font-medium mr-[66px]">Class</h5>
+                                <h5 class="text-[#030712] text-base font-medium">Price</h5>
+                            </div>
 
 
+                            <hr class="border-dashed border-[#03071233] mt-[15px] mb-[16px]">
+
+
+                            <!-- ----- Seats Name and Price ----- -->
+                            <div class="flex justify-between">
+                                <p class="text-[#03071299] text-base">C2</p>
+                                <p class="text-[#03071299] text-base">Economoy</p>
+                                <p class="text-[#03071299] text-base">550</p>
+                            </div>
+
+                            <div class="flex justify-between mt-4">
+                                <p class="text-[#03071299] text-base">C2</p>
+                                <p class="text-[#03071299] text-base">Economoy</p>
+                                <p class="text-[#03071299] text-base">550</p>
+                            </div>
+
+                            <hr class="border border-[#03071233] mt-[15px] mb-[16px]">
+
+                            <!-- Total Price -->
+                            <div class="flex justify-between mb-4">
+                                <h5 class="text-[#030712] text-base font-medium">Total Price</h5>
+                                <h5 class="text-[#030712] text-base font-medium">BDT 1100</h5>
+                            </div>
+
+
+                            <label class="input flex items-center h-[56px]">
+                                <input type="text" class="grow" placeholder="Have any coupon?" />
+                                <button
+                                    class="bg-[#1dd100] text-white px-[18px] py-[10px] rounded-lg font-semibold hover:bg-green-500">Apply</button>
+                            </label>
+
+
+                            <!-- Grand Total -->
+                            <div class="flex justify-between mt-6">
+                                <h5 class="text-[#030712] text-base font-medium">Total Price</h5>
+                                <h5 class="text-[#030712] text-base font-medium">BDT 1100</h5>
+                            </div>
+                        </div>
+                        <!-- ----- Grand Total Part End ----- -->
+
+
+                        <!-- ----- Passenger Info ----- -->
+                        <!-- Passenger Name -->
+                        <label class="form-control w-full inter-font mt-4">
+                            <div class="label">
+                                <span class="label-text text-[#030712] text-base font-semibold">Passenger Name*
+                                </span>
+                            </div>
+                            <input type="text" placeholder="Enter your name"
+                                class="input input-bordered w-full rounded-xl" />
+                        </label>
+
+                        <!-- Phone Number -->
+                        <label class="form-control w-full inter-font mt-4">
+                            <div class="label">
+                                <span class="label-text text-[#030712] text-base font-semibold">Phone Number* </span>
+                            </div>
+                            <input type="number" placeholder="Enter your phone number"
+                                class="input input-bordered w-full rounded-xl" />
+                        </label>
+
+                        <!-- Email ID -->
+                        <label class="form-control w-full inter-font mt-4">
+                            <div class="label">
+                                <span class="label-text text-[#030712] text-base font-semibold">Email ID </span>
+                            </div>
+                            <input type="email" placeholder="Enter your email id"
+                                class="input input-bordered w-full rounded-xl" />
+                        </label>
+
+                        <button
+                            class="btn btn-wide w-full raleway-font text-xl font-extrabold text-white bg-[#1dd100] rounded-2xl h-[65px] hover:bg-green-500 my-6">Next</button>
+
+
+                        <div class="flex justify-evenly">
+                            <a class="text-[#03071299] text-base underline inter-font">Terms and Conditions</a>
+                            <a class="text-[#03071299] text-base underline inter-font">Cancellation Policy</a>
+                        </div>
 
                     </div>
 
