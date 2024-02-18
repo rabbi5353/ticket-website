@@ -30,6 +30,29 @@
         .roboto-font {
             font-family: "Roboto", sans-serif;
         }
+
+        .new-class {
+            width: 33.33%;
+            color: #03071299;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        .p2 {
+            width: 33%;
+            color: #03071299;
+            font-size: 16px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .p3 {
+            width: 33%;
+            color: #03071299;
+            font-size: 16px;
+            margin-bottom: 16px;
+            text-align: right;
+        }
     </style>
 
 </head>
@@ -173,7 +196,8 @@
                             <div class="p-[17px] rounded-xl cursor-pointer bg-[#1dd10026] flex gap-[11px]">
 
                                 <img src="./images/seat-green.png" alt="">
-                                <a class="text-[#1dd100] inter-font font-medium text-lg">40
+                                <a class="text-[#1dd100] inter-font font-medium text-lg"><span
+                                        id="available-seat">8</span>
                                     Seats left</a>
                             </div>
                         </div>
@@ -260,42 +284,49 @@
 
 
                         <!-- ----- Seats Column & Row ----- -->
-                        <div class="flex justify-between mt-6">
+                        <div class="flex justify-between mt-6 inter-font">
                             <div class="flex flex-col gap-6">
-                                <p class="h-[56px] flex items-center">A</p>
-                                <p class="h-[56px] flex items-center">B</p>
+                                <p class="h-[56px] flex items-center text-lg font-medium text-[#0307127f]">A</p>
+                                <p class="h-[56px] flex items-center text-lg font-medium text-[#0307127f]">B</p>
                             </div>
                             <div class="flex gap-[66px] justify-end">
 
                                 <div class="grid grid-cols-2 gap-x-8  gap-y-6">
-                                    <p
-                                        class="rounded-xl bg-[#f7f8f8] w-[110px] h-[56px] flex items-center justify-center">
+                                    <button id="a1"
+                                        class="seat-name btn rounded-xl bg-[#f7f8f8] w-[110px] h-[56px] flex items-center justify-center text-lg font-medium text-[#0307127f]">
                                         A1
-                                    </p>
-                                    <p
-                                        class="rounded-xl bg-[#f7f8f8] w-[110px] h-[56px] flex items-center justify-center">
-                                        A2</p>
-                                    <p
-                                        class="rounded-xl bg-[#f7f8f8] w-[110px] h-[56px] flex items-center justify-center">
-                                        B1</p>
-                                    <p
-                                        class="rounded-xl bg-[#f7f8f8] w-[110px] h-[56px] flex items-center justify-center">
-                                        B2</p>
+                                    </button>
+                                    <button id="a2"
+                                        class="seat-name btn rounded-xl bg-[#f7f8f8] w-[110px] h-[56px] flex items-center justify-center text-lg font-medium text-[#0307127f]">
+                                        A2
+                                    </button>
+                                    <button id="b1"
+                                        class="seat-name btn rounded-xl bg-[#f7f8f8] w-[110px] h-[56px] flex items-center justify-center text-lg font-medium text-[#0307127f]">
+                                        B1
+                                    </button>
+                                    <button id="b2"
+                                        class="seat-name btn rounded-xl bg-[#f7f8f8] w-[110px] h-[56px] flex items-center justify-center text-lg font-medium text-[#0307127f]">
+                                        B2
+                                    </button>
                                 </div>
 
                                 <div class="grid grid-cols-2 gap-x-8  gap-y-6">
-                                    <p
-                                        class="rounded-xl bg-[#f7f8f8] w-[110px] h-[56px] flex items-center justify-center">
-                                        A3</p>
-                                    <p
-                                        class="rounded-xl bg-[#f7f8f8] w-[110px] h-[56px] flex items-center justify-center">
-                                        A4</p>
-                                    <p
-                                        class="rounded-xl bg-[#f7f8f8] w-[110px] h-[56px] flex items-center justify-center">
-                                        B3</p>
-                                    <p
-                                        class="rounded-xl bg-[#f7f8f8] w-[110px] h-[56px] flex items-center justify-center">
-                                        B4</p>
+                                    <button id="a3"
+                                        class="seat-name btn rounded-xl bg-[#f7f8f8] w-[110px] h-[56px] flex items-center justify-center text-lg font-medium text-[#0307127f]">
+                                        A3
+                                    </button>
+                                    <button id="a4"
+                                        class="seat-name btn rounded-xl bg-[#f7f8f8] w-[110px] h-[56px] flex items-center justify-center text-lg font-medium text-[#0307127f]">
+                                        A4
+                                    </button>
+                                    <button id="b3"
+                                        class="seat-name btn rounded-xl bg-[#f7f8f8] w-[110px] h-[56px] flex items-center justify-center text-lg font-medium text-[#0307127f]">
+                                        B3
+                                    </button>
+                                    <button id="b4"
+                                        class="seat-name btn rounded-xl bg-[#f7f8f8] w-[110px] h-[56px] flex items-center justify-center text-lg font-medium text-[#0307127f]">
+                                        B4
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -317,11 +348,11 @@
                             <div class="flex justify-between">
                                 <div class="flex gap-[3px] items-center">
                                     <h5 class="text-[#030712] text-base font-medium">Seat</h5>
-                                    <p
+                                    <p id="purchaseTicketCount"
                                         class="w-[23px] h-[13px] bg-[#1DD100] rounded-[5px] text-white text-xs font-bold flex justify-center items-center">
-                                        2</p>
+                                        0</p>
                                 </div>
-                                <h5 class="text-[#030712] text-base font-medium mr-[66px]">Class</h5>
+                                <h5 class="text-[#030712] text-base font-medium mr-[60px]">Class</h5>
                                 <h5 class="text-[#030712] text-base font-medium">Price</h5>
                             </div>
 
@@ -330,38 +361,33 @@
 
 
                             <!-- ----- Seats Name and Price ----- -->
-                            <div class="flex justify-between">
-                                <p class="text-[#03071299] text-base">C2</p>
-                                <p class="text-[#03071299] text-base">Economoy</p>
-                                <p class="text-[#03071299] text-base">550</p>
+                            <div id="purchaseHistory" class="hidden">
+                                <div class="flex flex-wrap w-full">
+
+                                </div>
                             </div>
 
-                            <div class="flex justify-between mt-4">
-                                <p class="text-[#03071299] text-base">C2</p>
-                                <p class="text-[#03071299] text-base">Economoy</p>
-                                <p class="text-[#03071299] text-base">550</p>
-                            </div>
-
-                            <hr class="border border-[#03071233] mt-[15px] mb-[16px]">
+                            <hr class="border border-[#03071233] mb-[16px]">
 
                             <!-- Total Price -->
                             <div class="flex justify-between mb-4">
                                 <h5 class="text-[#030712] text-base font-medium">Total Price</h5>
-                                <h5 class="text-[#030712] text-base font-medium">BDT 1100</h5>
+                                <h5 class="text-[#030712] text-base font-medium">BDT <span id="totalPrice">0</span>
+                                </h5>
                             </div>
 
 
                             <label class="input flex items-center h-[56px]">
-                                <input type="text" class="grow" placeholder="Have any coupon?" />
-                                <button
+                                <input id="couponInput" type="text" class="grow" placeholder="Have any coupon?" />
+                                <button id="couponBtn"
                                     class="bg-[#1dd100] text-white px-[18px] py-[10px] rounded-lg font-semibold hover:bg-green-500">Apply</button>
                             </label>
 
 
                             <!-- Grand Total -->
                             <div class="flex justify-between mt-6">
-                                <h5 class="text-[#030712] text-base font-medium">Total Price</h5>
-                                <h5 class="text-[#030712] text-base font-medium">BDT 1100</h5>
+                                <h5 class="text-[#030712] text-base font-medium">Grand Total</h5>
+                                <h5 class="text-[#030712] text-base font-medium">BDT <span id="grandTotal">0</span></h5>
                             </div>
                         </div>
                         <!-- ----- Grand Total Part End ----- -->
@@ -417,7 +443,7 @@
 
     </main>
 
-
+    <script src="./main.js"></script>
 </body>
 
 </html>
