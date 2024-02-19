@@ -58,7 +58,7 @@
 </head>
 
 <body class="raleway-font max-w-[1440px] mx-auto">
-    <header class="container max-w-[1170px] mx-auto">
+    <header id="header" class="container max-w-[1170px] mx-auto">
         <!-- ---------------*** NavBar Section ***--------------- -->
         <nav>
             <div class="navbar p-0 mt-12 mb-[30px]">
@@ -122,7 +122,7 @@
 
     </header>
 
-    <main>
+    <main id="main">
         <!-- ---------------*** Best offer Section ***--------------- -->
         <section class="container max-w-[1170px] mx-auto mt-[120px]">
             <h3 class="text-2xl lg:text-[40px] font-bold text-[#030712] text-center mb-12">Best offers for you</h3>
@@ -400,7 +400,7 @@
                                 <span class="label-text text-[#030712] text-base font-semibold">Passenger Name*
                                 </span>
                             </div>
-                            <input type="text" placeholder="Enter your name"
+                            <input id="nameInput" type="text" placeholder="Enter your name"
                                 class="input input-bordered w-full rounded-xl" />
                         </label>
 
@@ -409,7 +409,7 @@
                             <div class="label">
                                 <span class="label-text text-[#030712] text-base font-semibold">Phone Number* </span>
                             </div>
-                            <input type="number" placeholder="Enter your phone number"
+                            <input id="numberInput" type="number" placeholder="Enter your phone number"
                                 class="input input-bordered w-full rounded-xl" />
                         </label>
 
@@ -418,11 +418,11 @@
                             <div class="label">
                                 <span class="label-text text-[#030712] text-base font-semibold">Email ID </span>
                             </div>
-                            <input type="email" placeholder="Enter your email id"
+                            <input id="emailInput" type="email" placeholder="Enter your email id"
                                 class="input input-bordered w-full rounded-xl" />
                         </label>
 
-                        <button
+                        <button id="next-btn"
                             class="btn btn-wide w-full raleway-font text-xl font-extrabold text-white bg-[#1dd100] rounded-2xl h-[65px] hover:bg-green-500 my-6">Next</button>
 
 
@@ -442,6 +442,26 @@
 
 
     </main>
+
+    <!-- ---------------*** External Pop Up Section ***--------------- -->
+    <div id="popup" class="w-full h-[550px] bg-[#f7f8f8] hidden">
+        <div class="w-[718px] h-[481px] bg-white rounded-2xl roboto-font text-center m-auto">
+            <img class="mx-auto mt-[57px]" src="./images/success.png" alt="">
+            <h4 class="text-[#27ae60] font-bold text-2xl my-8">SUCCESS</h4>
+            <p class="w-[561px] font-medium text-xl text-[#4a4a4a] mx-auto mb-2">
+                Thank you for Booking Our Bus Seats.
+                We are working hard to find the best service and deals for you.
+            </p>
+
+            <p class="w-[561px] text-xl text-[#4a4a4a] mx-auto mb-5 font-light">Shortly you will find a
+                confirmation in your email.</p>
+
+            <button
+                class="py-4 px-[104px] text-xl font-semibold text-white bg-[#27AE60] rounded-[32px] hover:bg-green-500">Continue</button>
+        </div>
+    </div>
+
+
 
     <script src="./main.js"></script>
 </body>

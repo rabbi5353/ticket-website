@@ -1,35 +1,56 @@
 const allSeats = document.getElementsByClassName('seat-name');
 
-// const a1 = document.getElementById('a1');
-// const a2 = document.getElementById('a2');
-// const b1 = document.getElementById('b1');
-// const b2 = document.getElementById('b2');
-// const a3 = document.getElementById('a3');
-// const a4 = document.getElementById('a4');
-// const b3 = document.getElementById('b3');
-// const b4 = document.getElementById('b4');
-
 
 const perTicketPrice = 550;
 
+let totalAvailableSeats = 8;
+
+let seatLimitCount = 0;
+
+
+
+
+// let totalPrices = document.getElementById('totalPrice');
+
+
+
 for (let seat of allSeats) {
+
     seat.addEventListener('click', function () {
+
         //Button color change
         seat.style.backgroundColor = '#1DD100';
         seat.style.color = 'white';
 
         //Decrement seat
-        const availableSeat = document.getElementById('available-seat');
+        let availableSeat = document.getElementById('available-seat');
         let availableSeatText = availableSeat.innerText;
         let availableSeatValue = parseInt(availableSeatText);
         availableSeat.innerText = availableSeatValue - 1;
+        totalAvailableSeats = availableSeatValue - 1;
         console.log(availableSeat.innerText);
+
+        if (totalAvailableSeats < 4) {
+            availableSeat.innerText = 4;
+        }
+
 
         //Purchase seat count
         const purchaseTicketCount = document.getElementById('purchaseTicketCount');
         let purchaseTicketCountText = purchaseTicketCount.innerText;
         let purchaseTicketCountValue = parseInt(purchaseTicketCountText);
         purchaseTicketCount.innerText = purchaseTicketCountValue + 1;
+        seatLimitCount = purchaseTicketCountValue + 1
+
+        if (seatLimitCount > 4) {
+            alert("Your limit cross");
+            seat.style.backgroundColor = '#f7f8f8';
+            seat.style.color = '#0307127f';
+            purchaseTicketCount.innerText = 4;
+            return;
+        }
+
+
 
         //Purchase history add
         const purchaseHistory = document.getElementById('purchaseHistory');
@@ -59,18 +80,64 @@ for (let seat of allSeats) {
         let totalPrice = document.getElementById('totalPrice');
         let totalPriceText = totalPrice.innerText;
         let totalPriceValue = parseInt(totalPriceText);
-        console.log(totalPriceValue);
         totalPrice.innerText = perTicketPrice + totalPriceValue;
+        // console.log(totalPriceValue);
+
+
+
+        //Grand total price add
+        // let grandTotalPrice = document.getElementById('grandTotal');
+        // let grandTotalPriceText = grandTotalPrice.innerText;
+        // let grandTotalPriceValue = parseInt(grandTotalPriceText);
+        // grandTotalPrice.innerText = totalPrice.innerText
 
 
         ///////////////////////////////
+        document.getElementById('couponBtn').addEventListener('click', function () {
+            const couponInput = document.getElementById('couponInput');
+            const couponInputValue = couponInput.value;
+            if (couponInputValue === 'NEW15') {
+
+                const discountPercent = perTicketPrice - (perTicketPrice * (15 / 100));
+
+                const discountPrice = discountPercent * seatLimitCount;
+                return discountPrice
+
+                // const grandTotalPrice = document.getElementById('grandTotal');
+                // grandTotalPrice.innerText = discountPrice
+
+
+
+                // console.log(seatLimitCount);
+                // console.log(totalPrice.innerText);
+
+
+                // purchaseTicketCount
+
+
+            }
+            else if (couponInputValue === 'Couple 20') {
+                console.log('thik ace coupon2222222');
+
+
+
+
+            }
+
+            else {
+                alert('Invalid Coupon. Please check again your coupon spelling')
+            }
+        })
+
 
 
         //Grand total price add
         let grandTotalPrice = document.getElementById('grandTotal');
         let grandTotalPriceText = grandTotalPrice.innerText;
         let grandTotalPriceValue = parseInt(grandTotalPriceText);
-        grandTotalPrice.innerText = totalPrice.innerText
+        grandTotalPrice.innerText = perTicketPrice + totalPriceValue;
+
+
 
 
 
@@ -78,71 +145,29 @@ for (let seat of allSeats) {
 
         seat.disabled = true;
     })
-
-
-
-
 }
 
 
-// a1.addEventListener('click', function () {
-//     //Button color change
-//     a1.style.backgroundColor = '#1DD100';
-//     a1.style.color = 'white';
 
-//     //Decrement seat
-//     const availableSeat = document.getElementById('available-seat');
-//     let availableSeatText = availableSeat.innerText;
-//     let availableSeatValue = parseInt(availableSeatText);
-//     availableSeat.innerText = availableSeatValue - 1;
-//     console.log(availableSeat.innerText);
+//Form validation and Popup page show
+document.getElementById('next-btn').addEventListener('click', function () {
+    const numberInput = document.getElementById('numberInput').value;
+    const numberValue = parseInt(numberInput);
 
-//     //Purchase seat count
-//     const purchaseTicketCount = document.getElementById('purchaseTicketCount');
-//     let purchaseTicketCountText = purchaseTicketCount.innerText;
-//     let purchaseTicketCountValue = parseInt(purchaseTicketCountText);
-//     purchaseTicketCount.innerText = purchaseTicketCountValue + 1;
+    if (typeof numberValue === 'number' && numberValue >= 0) {
+        const header = document.getElementById('header');
+        header.classList.add('hidden');
 
-//     //Purchase history add
-//     const purchaseHistory = document.getElementById('purchaseHistory');
-//     const economoy = document.getElementById('economoy');
+        const main = document.getElementById('main');
+        main.classList.add('hidden');
 
-//     //Create p tag
-//     const p = document.createElement('p');
-//     p.innerText = a1.innerText;
-//     purchaseHistory.insertBefore(p, economoy);
+        const popup = document.getElementById('popup');
+        popup.classList.remove('hidden')
 
-//     //Show purchase history
-//     purchaseHistory.classList.remove('hidden');
+        document.body.backgroundColor = 'red';
+    }
 
-
-//     //Total price add
-//     let totalPrice = document.getElementById('totalPrice');
-//     let totalPriceText = totalPrice.innerText;
-//     let totalPriceValue = parseInt(totalPriceText);
-//     console.log(totalPriceValue);
-//     totalPrice.innerText = perTicketPrice + totalPriceValue;
-
-
-//     //Grand total price add
-//     let grandTotalPrice = document.getElementById('grandTotal');
-//     let grandTotalPriceText = grandTotalPrice.innerText;
-//     let grandTotalPriceValue = parseInt(grandTotalPriceText);
-//     grandTotalPrice.innerText = totalPrice.innerText
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//     a1.disabled = true;
-// })
-
+    else {
+        alert('You must fill up Number box');
+    }
+})
