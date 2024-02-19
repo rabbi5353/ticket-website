@@ -1,13 +1,8 @@
 const allSeats = document.getElementsByClassName('seat-name');
 
-
 const perTicketPrice = 550;
-
 let totalAvailableSeats = 8;
-
 let seatLimitCount = 0;
-
-
 
 
 for (let seat of allSeats) {
@@ -47,7 +42,6 @@ for (let seat of allSeats) {
         }
 
 
-
         //Purchase history add
         const purchaseHistory = document.getElementById('purchaseHistory');
         const economoy = document.getElementById('economoy');
@@ -68,9 +62,9 @@ for (let seat of allSeats) {
         p3.setAttribute('class', 'p3')
         purchaseHistory.childNodes[1].appendChild(p3, economoy)
 
-
         //Show purchase history
         purchaseHistory.classList.remove('hidden');
+
 
         //Total price add
         let totalPrice = document.getElementById('totalPrice');
@@ -80,36 +74,66 @@ for (let seat of allSeats) {
         // console.log(totalPriceValue);
 
 
-
         //Grand
         const grandTotal = document.getElementById('grandTotal');
         grandTotal.innerText = totalPrice.innerText;
 
 
 
-        ///////////////////////////////
+        //Coupon Button Functionality
         const couponBtn = document.getElementById('couponBtn');
-
         couponBtn.addEventListener('click', function () {
             const couponInput = document.getElementById('couponInput');
             const couponInputValue = couponInput.value;
 
             if (couponInputValue === 'NEW15') {
 
+                const discountDiv = document.getElementById('discountDiv');
+
+
+                couponBtn.parentNode.classList.add('hidden')
+                discountDiv.classList.remove('hidden');
+
+
                 const discountPercent = perTicketPrice - (perTicketPrice * (15 / 100));
                 const discountPrice = discountPercent * seatLimitCount;
 
                 const grandTotal = document.getElementById('grandTotal');
                 grandTotal.innerText = discountPrice;
+
+
+                const totalPrice = document.getElementById('totalPrice');
+                const totalPriceValue = parseInt(totalPrice.innerText)
+
+
+                const discountAmount = document.getElementById('discountAmount');
+                const discountAmountCalculate = totalPriceValue - discountPrice;
+                discountAmount.innerText = discountAmountCalculate
+
             }
 
             else if (couponInputValue === 'Couple 20') {
+
+                const discountDiv = document.getElementById('discountDiv');
+
+
+                couponBtn.parentNode.classList.add('hidden')
+                discountDiv.classList.remove('hidden');
 
                 const discountPercent = perTicketPrice - (perTicketPrice * (20 / 100));
                 const discountPrice = discountPercent * seatLimitCount;
 
                 const grandTotal = document.getElementById('grandTotal');
                 grandTotal.innerText = discountPrice;
+
+
+                const totalPrice = document.getElementById('totalPrice');
+                const totalPriceValue = parseInt(totalPrice.innerText)
+
+
+                const discountAmount = document.getElementById('discountAmount');
+                const discountAmountCalculate = totalPriceValue - discountPrice;
+                discountAmount.innerText = discountAmountCalculate
             }
 
             else {
