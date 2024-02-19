@@ -10,10 +10,6 @@ let seatLimitCount = 0;
 
 
 
-// let totalPrices = document.getElementById('totalPrice');
-
-
-
 for (let seat of allSeats) {
 
     seat.addEventListener('click', function () {
@@ -85,62 +81,41 @@ for (let seat of allSeats) {
 
 
 
-        //Grand total price add
-        // let grandTotalPrice = document.getElementById('grandTotal');
-        // let grandTotalPriceText = grandTotalPrice.innerText;
-        // let grandTotalPriceValue = parseInt(grandTotalPriceText);
-        // grandTotalPrice.innerText = totalPrice.innerText
+        //Grand
+        const grandTotal = document.getElementById('grandTotal');
+        grandTotal.innerText = totalPrice.innerText;
+
 
 
         ///////////////////////////////
-        document.getElementById('couponBtn').addEventListener('click', function () {
+        const couponBtn = document.getElementById('couponBtn');
+
+        couponBtn.addEventListener('click', function () {
             const couponInput = document.getElementById('couponInput');
             const couponInputValue = couponInput.value;
+
             if (couponInputValue === 'NEW15') {
 
                 const discountPercent = perTicketPrice - (perTicketPrice * (15 / 100));
-
                 const discountPrice = discountPercent * seatLimitCount;
-                return discountPrice
 
-                // const grandTotalPrice = document.getElementById('grandTotal');
-                // grandTotalPrice.innerText = discountPrice
-
-
-
-                // console.log(seatLimitCount);
-                // console.log(totalPrice.innerText);
-
-
-                // purchaseTicketCount
-
-
+                const grandTotal = document.getElementById('grandTotal');
+                grandTotal.innerText = discountPrice;
             }
+
             else if (couponInputValue === 'Couple 20') {
-                console.log('thik ace coupon2222222');
 
+                const discountPercent = perTicketPrice - (perTicketPrice * (20 / 100));
+                const discountPrice = discountPercent * seatLimitCount;
 
-
-
+                const grandTotal = document.getElementById('grandTotal');
+                grandTotal.innerText = discountPrice;
             }
 
             else {
                 alert('Invalid Coupon. Please check again your coupon spelling')
             }
         })
-
-
-
-        //Grand total price add
-        let grandTotalPrice = document.getElementById('grandTotal');
-        let grandTotalPriceText = grandTotalPrice.innerText;
-        let grandTotalPriceValue = parseInt(grandTotalPriceText);
-        grandTotalPrice.innerText = perTicketPrice + totalPriceValue;
-
-
-
-
-
 
 
         seat.disabled = true;
